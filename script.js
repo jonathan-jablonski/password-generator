@@ -1,20 +1,19 @@
 // Array of special characters to be included in password
-var specialCharacters = ["!", "@", "$", "%"];
+var specialCharacters = ['!','@','#','$','%','^','&','*','(',')'];
 
 // Array of numeric characters to be included in password
-var numericCharacters =["1","2","3","4"];
+var numericCharacters =["0","1","2","3","4","5","6","7","8","9"];
 
 // Array of lowercase characters to be included in password
-var lowerCasedCharacters = ["d","e","f","g"];
+var lowerCasedCharacters = String.fromCharCode(math.floor(math.random() * 26) + 97);
 
 // Array of uppercase characters to be included in password
-var upperCasedCharacters = ["H","I","J","K"];
+var upperCasedCharacters = String.fromCharCode(math.floor(math.random() * 26) + 65);
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  alert()
   // Variable to store length of password from user input
-  var passLength = ;
+  var passLength = prompt('How long would you like your password to be?', '8');
 
   // Conditional statement to check if password length is a number. Prompts end if this evaluates false
   if (isNaN(passLength) === true) {
@@ -23,41 +22,51 @@ function getPasswordOptions() {
   }
 
   // Conditional statement to check if password length is at least 8 characters long. Prompts end if this evaluates false
-  
+  if(passLength < 8) {
+    alert('Password length must be at least 8 characters long.')
+    return;
+  }
   // Conditional statement to check if password length is less than 128 characters long. Prompts end if this evaluates false
-
+  if(passLength > 128) {
+    alert('Password length cannot be longer than 128 characters.')
+    return;
+  }
   // Variable to store boolean regarding the inclusion of special characters
-  var specialCharactersConfirm = ;
+  var specialCharactersConfirm = confirm('Do you want special characters in your password?');
 
   // Variable to store boolean regarding the inclusion of numeric characters
-  var numericCharactersConfirm = ;
+  var numericCharactersConfirm = confirm('Do you want any numbers in your password?');
 
   // Variable to store boolean regarding the inclusion of lowercase characters
-  var lowerCasedCharactersConfirm = ;
+  var lowerCasedCharactersConfirm = confirm('Do you want any lowercase letters in your password?');
 
   // Variable to store boolean regarding the inclusion of uppercase characters
-  var upperCasedCharactersConfirm = ;
+  var upperCasedCharactersConfirm = confirm('Do you want any uppercase letters in your password?');
 
   // Conditional statement to check if user does not include any types of characters. Password generator ends if all four variables evaluate to false
-  if () {
+  if (specialCharactersConfirm === false, numericCharactersConfirm === false, lowerCasedCharactersConfirm === false, upperCasedCharactersConfirm === false) {
     alert('Must select at least one character type');
     return;
   }
 
   // Object to store user input variables
   var passwordOptions = {
-    
+    passLength: 0,
+    specialCharactersConfirm: false,
+    numericCharactersConfirm: false,
+    lowerCasedCharactersConfirm: false,
+    upperCasedCharactersConfirm: false
   };
   // Return the options object as the exported value of this function
   return passwordOptions;
 }
 
 // Function for getting a random element from an array
-function getRandomElement(arr) {
+function getRandomElement(charArrays) {
   // Get a random number based on the length of the array parameter
-  var randIndex = ;
+  var randIndex = Math.floor(Math.random() * arr.length);
   // Use the random number made to get an element out of the array
-  var randElement = ;
+  var randElement = charArrays[randIndex];
   // Return the element
   return randElement;
 }
@@ -67,13 +76,13 @@ function generatePassword() {
   // Running the function to trigger the prompts and get the users answers back as an object
   var options = getPasswordOptions();
   // Array to store password as it's being concatenated 
-  var result = ;
+  var result = [];
 
   // Array to store types of characters to include in password
-  var possibleCharacters = ;
+  var possibleCharacters = [];
 
   // Array to contain one of each type of chosen character to ensure each will be used
-  var guaranteedCharacters = ;
+  var guaranteedCharacters = [];
 
   // Conditional statement that adds array of special characters into array of possible characters based on user input
   // Push new random special character to guaranteedCharacters to make at least one of the value is always included 
@@ -108,7 +117,7 @@ function generatePassword() {
 
 
   // Join the array to make it a singular string to return 
-  return 
+  return generatePassword
 }
 
 // Get references to the #generate element
