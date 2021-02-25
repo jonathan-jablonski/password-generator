@@ -5,10 +5,10 @@ var specialCharacters = ['!','@','#','$','%','^','&','*','(',')'];
 var numericCharacters =["0","1","2","3","4","5","6","7","8","9"];
 
 // Array of lowercase characters to be included in password
-var lowerCasedCharacters = String.fromCharCode(math.floor(math.random() * 26) + 97);
+var lowerCasedCharacters = String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 
 // Array of uppercase characters to be included in password
-var upperCasedCharacters = String.fromCharCode(math.floor(math.random() * 26) + 65);
+var upperCasedCharacters = String.fromCharCode(Math.floor(Math.random() * 26) + 65);
 
 // Function to prompt user for password options
 function getPasswordOptions() {
@@ -109,12 +109,12 @@ function generatePassword() {
   }
 
   // For loop to iterate over the password length provided from the options object, selecting random indices from the array of possible characters and concatenating those characters into the result variable
-  for (var i = 0; i < options.; i++) {
+  for (var i = 0; i < options.length; i++) {
     var possibleCharacter = getRandomElement[possibleCharacters];
   }
 
   // For loop to iterate the guarenteed characters to overwrite the generated characters
-
+  for (var i = 0)
 
   // Join the array to make it a singular string to return 
   return generatePassword();
