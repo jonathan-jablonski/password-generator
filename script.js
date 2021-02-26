@@ -114,7 +114,9 @@ function generatePassword() {
   }
 
   // For loop to iterate the guarenteed characters to overwrite the generated characters
-  for (var i = 0)
+  for (var i = 0) {
+    
+  }
 
   // Join the array to make it a singular string to return 
   return generatePassword();
